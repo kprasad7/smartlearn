@@ -1,0 +1,228 @@
+<!doctype>
+<html>
+{% load static %}
+
+<head>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<style>
+.navbar{
+	background-color: #F1C40F;
+	width:100%;
+  padding:3px;
+  position: fixed;
+  margin-left: auto;
+  text-align:right;
+}
+footer{
+    background-color: #F1C40F;
+	padding:2%;
+    clip-path: polygon(48% 0, 83% 21%, 100% 0, 100% 100%, 0 100%, 0 0, 17% 22%);
+}
+</style>
+<script type="text/javascript">
+paused = false;
+// set minutes
+var mins = {{course.time}};
+// calculate the seconds 
+var secs = mins * 60;
+var t=0;
+  var flagTimer='resume';
+function countdown() {
+	t = setTimeout('Decrement()',1000);
+}
+function Decrement() {
+	if (document.getElementById) {
+		minutes = document.getElementById("minutes");
+		seconds = document.getElementById("seconds");
+    mins = document.getElementById("timee");
+		// if less than a minute remaining
+		if (seconds < 59) {
+			seconds.value = secs;
+		} else {
+			minutes.value = getminutes();
+			seconds.value = getseconds();
+		}
+		secs--;
+		t= setTimeout('Decrement()',1000);
+    if (mins === -1) {
+      stop();
+      clearTimeout(t);
+      alert("Time's Up!");
+      if(confirm("If you want a result?")){
+        window.location.href = "{% url "view-result" %}"
+      }
+      else{
+        window.location.href = "{% url "view-result" %}"
+      }
+        
+      
+
+    
+       
+
+     
+
+}
+	}
+}
+function getminutes() {
+	// minutes is seconds divided by 60, rounded down
+	mins = Math.floor(secs / 60);
+	return mins;
+}
+function getseconds() {
+	// take mins remaining (as seconds) away from total seconds remaining
+	return secs-Math.round(mins *60);
+}
+function pause() { 
+  document.getElementById("Pause").disabled = true;
+  
+  if( flagTimer=='resume')
+  {
+    clearTimeout(t);
+    t=0;
+	  document.getElementById('Pause').value="Resume";
+    flagTimer='pause';
+    alert("Resume the TEST !");
+    if(confirm("Do you want to continue?")){
+      t= setTimeout('Decrement()',1000);
+      document.getElementById("currentId").disabled = true;
+    }
+    else{
+      t= setTimeout('Decrement()',1000);
+      document.getElementById("currentId").disabled = true;
+    }
+    
+    
+  }
+  else
+  {
+    flagTimer='resume';
+	resume();
+  }
+  
+}
+function resume() {
+	t= setTimeout('Decrement()',1000);
+  
+}
+function demoDisplay() {
+  document.getElementById("myP1").style.display = "none";
+}
+</script>
+
+</head>
+<nav class="navbar navbar-expand-sm ">
+ <div>
+  <a class="navbar-brand" href="#">SmartLearn</a>
+ </div> 
+  <!--Question {{ questions.end_index }} of  {{count}}</h1>-->
+  <div id="timer">
+      
+    	Time:<input id="minutes"  style="width: 24px; border: none; background-color:#F1C40F;">min
+      
+    	<input id="seconds"  style="width: 26px; border: none; background-color:#F1C40F;"/>sec / {{course.time}} min
+  </div>        
+  
+    <script>
+        countdown();
+    </script> 
+  <center>  
+  <div id="timer" style="padding-right:150px;">
+  
+    <button   type="button" class="btn btn-danger btn-sm" id="Pause" value="Pause" onClick="pause();">Pause</button>
+  </div>
+  </center>
+</nav>
+
+
+<div class="jumbotron my-4" id="myP1">
+<center><h5>Total Questions: {{ questions.count }}</h5></center>
+  <form class="form" autocomplete="off" onsubmit="return saveAns()"  action="{% url "calculate-marks"%}" method="POST">
+   {% csrf_token %} 
+    <h1 style="text-align: center;">{{course.course_name}} </h1>
+    {% for q in questions%}
+    <h3 class="text-info">{{ forloop.counter }}. {{q.question}}</h3><h4 style="text-align: right;">[Marks {{q.marks}}]</h4>
+        <input type="hidden" name="csrfmiddlewaretoken" value="C24rUotmdHawVQJL3KrqiWxvti8UffOFYUc8TRbZtLt36AVLdP3jbkzUVe3beRAa">
+        
+          <div class="form-check mx-4">
+            <input class="form-check-input" type="radio" name="{{ forloop.counter }}" id="{{q.option1}}" value="Option1">
+            <label class="form-check-label" for="option1">
+              {{q.option1}}
+            </label>
+          </div>
+
+        
+          <div class="form-check mx-4">
+            <input class="form-check-input" type="radio" name="{{ forloop.counter }}" id="{{q.option2}}" value="Option2">
+            <label class="form-check-label" for="option2">
+              {{q.option2}}
+            </label>
+          </div>
+
+        
+          <div class="form-check mx-4">
+            <input class="form-check-input" type="radio" name="{{ forloop.counter }}" id="{{q.option3}}" value="Option3">
+            <label class="form-check-label" for="option3">
+              {{q.option3}}
+            </label>
+          </div>
+
+        
+          <div class="form-check mx-4">
+            <input class="form-check-input" type="radio" name="{{ forloop.counter }}" id="{{q.option4}}" value="Option4">
+            <label class="form-check-label" for="option4">
+              {{q.option4}}
+            </label>
+          </div>
+
+        {% endfor %}
+        <button class="btn form-control btn-success" id="submitAnswer">Submit Quiz</button> 
+        
+        </div>
+        </div>  
+    </form>
+  </div>
+
+<script> 
+    function saveAns(){  
+
+        var ele = document.getElementsByTagName('input'); 
+        for(i = 0; i < ele.length; i++) { 
+            if(ele[i].type="radio") { 
+                if(ele[i].checked){        
+                  setCookie(ele[i].name,ele[i].value,3)
+                }
+            } 
+        } 
+          
+    }
+    
+    function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  var expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+	
+
+
+</script> 
+<br><br><br>
+<footer>
+		<div class="art">
+		 <div class="content">
+		   <section>
+		   	 <header>Smart Learn</header>
+		   </section>
+		  </div>	  
+		  <div class="notice">
+		      Copyright Protected & copy;
+			  <strong>Smart Learn</strong>
+		  </div>  
+		</div>
+</footer>
+</html>

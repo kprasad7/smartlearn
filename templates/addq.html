@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+{% load widget_tweaks %}
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+	<title>Responsive Homepage design with Bootstrap 4 and Animate css</title>
+	<link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
+	<link href="./footer.css" rel="stylesheet">
+	<link  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" data-auto-replace-svg="nest"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('.chkbx').click(function(){
+        var text="";
+        $('.chkbx:checked').each(function(){
+            text+=$(this).val()+',';
+        });
+        text=text.substring(0,text.length-1);
+        $("#selectedtext").val(text);
+        var count =$("[type='checkbox']:checked").length;
+        $('#count').val($("[type='checkbox']:checked").length);
+    });
+});
+$(document).ready(function(){
+    $('.chkbx1').click(function(){
+        var text="";
+        $('.chkbx1:checked').each(function(){
+            text+=$(this).val()+',';
+        });
+        text=text.substring(0,text.length-1);
+        $("#selectedtext1").val(text);
+        var count =$("[type='checkbox']:checked").length;
+        $('#count').val($("[type='checkbox']:checked").length);
+    });
+});
+$(document).ready(function(){
+    $('.chkbx2').click(function(){
+        var text="";
+        $('.chkbx2:checked').each(function(){
+            text+=$(this).val()+',';
+        });
+        text=text.substring(0,text.length-1);
+        $("#selectedtext2").val(text);
+        var count =$("[type='checkbox']:checked").length;
+        $('#count').val($("[type='checkbox']:checked").length);
+    });
+});
+$(document).ready(function(){
+    $('.chkbx3').click(function(){
+        var text="";
+        $('.chkbx3:checked').each(function(){
+            text+=$(this).val()+',';
+        });
+        text=text.substring(0,text.length-1);
+        $("#selectedtext3").val(text);
+        var count =$("[type='checkbox']:checked").length;
+        $('#count').val($("[type='checkbox']:checked").length);
+    });
+});
+$(document).ready(function(){
+    $('.chkbx4').click(function(){
+        var text="";
+        $('.chkbx4:checked').each(function(){
+            text+=$(this).val()+',';
+        });
+        text=text.substring(0,text.length-1);
+        $("#selectedtext4").val(text);
+        var count =$("[type='checkbox']:checked").length;
+        $('#count').val($("[type='checkbox']:checked").length);
+    });
+});
+$(document).ready(function(){
+    $('.chkbx5').click(function(){
+        var text="";
+        $('.chkbx5:checked').each(function(){
+            text+=$(this).val()+',';
+        });
+        text=text.substring(0,text.length-1);
+        $("#selectedtext5").val(text);
+        var count =$("[type='checkbox']:checked").length;
+        $('#count').val($("[type='checkbox']:checked").length);
+    });
+});
+function myFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("mylist");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+function myFunctiont() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("mylistt");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[2];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+function myFunctio() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("mylis");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[3];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+function myFunct() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myl");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[4];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+function myFunct() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myl");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+function fi() {
+  var input, filter, div,option, i;
+  input = document.getElementById("mt");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdown");
+  option = div.getElementsByTagName("p");
+  for (i = 0; i < option.length; i++) {
+    txtValue = option[i].textContent || option[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      option[i].style.display = "";
+    } else {
+      option[i].style.display = "none";
+    }
+  }
+}
+</script>
+<style>
+.navbar{
+	background-color: #F1C40F;
+	padding:3%;
+    clip-path: polygon(50% 0%, 100% 0, 100% 35%, 100% 64%, 80% 97%, 50% 66%, 18% 97%, 0 63%, 0% 35%, 0 0);
+}
+footer{
+    background-color: #F1C40F;
+	padding:2%;
+    clip-path: polygon(48% 0, 83% 21%, 100% 0, 100% 100%, 0 100%, 0 0, 17% 22%);
+}
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 30%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#mylist {
+  
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 30%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+#mylistt {
+  
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 30%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+#mylis {
+  
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 30%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+#myl {
+  
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 30%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+#my {
+  
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 10%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align:left;
+  padding-right: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+</style>
+</head>
+<body>
+<nav class="navbar navbar-light ">
+  <div class="container">
+    <h3>Smart Learn</h3>
+  </div>
+</nav>
+<center>
+<h3> ADD QUESTIONS BY USING FILTER</h3>
+</center>
+<form method="POST" autocomplete="off" style="margin:100px;margin-top: 0px;">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="question">Course</label>
+      {% render_field questionForm.courseID|attr:'required:true' class="form-control"  %}
+      <br>
+      <label for="question_number">Marks</label>
+      {% render_field questionForm.marks|attr:'required:true' class="form-control" placeholder="10" %}
+        <br>
+    <!---->
+    <div class="input-group flex-nowrap">
+     <span class="input-group-text" id="addon-wrapping">Question</span>
+     <input type="text" id="selectedtext" class="form-control" placeholder="Selected Checkbox Question" aria-label="Username" aria-describedby="addon-wrapping" name="question">
+    </div>
+    <div class="input-group flex-nowrap">
+     <span class="input-group-text" id="addon-wrapping">option1</span>
+     <input type="text" id="selectedtext1" class="form-control" placeholder="Selected Checkbox Option1" aria-label="Username" aria-describedby="addon-wrapping" name="option1">
+    </div>
+    <div class="input-group flex-nowrap">
+     <span class="input-group-text" id="addon-wrapping">option2</span>
+     <input type="text" id="selectedtext2" class="form-control" placeholder="Selected Checkbox option2" aria-label="Username" aria-describedby="addon-wrapping" name="option2">
+    </div>
+    <div class="input-group flex-nowrap">
+     <span class="input-group-text" id="addon-wrapping">option3</span>
+     <input type="text" id="selectedtext3" class="form-control" placeholder="Selected Checkbox option3" aria-label="Username" aria-describedby="addon-wrapping" name="option3">
+    </div>
+    <div class="input-group flex-nowrap">
+     <span class="input-group-text" id="addon-wrapping">option4</span>
+     <input type="text" id="selectedtext4" class="form-control" placeholder="Selected Checkbox option4" aria-label="Username" aria-describedby="addon-wrapping" name="option4">
+    </div>
+    <div class="input-group flex-nowrap">
+     <span class="input-group-text" id="addon-wrapping">answer</span>
+     <input type="text" id="selectedtext5" class="form-control" placeholder="Selected Checkbox Answer" aria-label="Username" aria-describedby="addon-wrapping" name="answer">
+    </div>
+    </div>
+    <!--hh-->
+    <button type="submit" class="btn btn-primary">ADD</button>
+  </form>
+<center>    
+<h2>Questions Filter</h2>
+<label for="student_class">Student_Class</label>
+<select id="my" onchange="myF()" class='form-control'>
+ <option value="10">10</option>
+ <option>9</option>
+ <option>8</option>
+ <option>7</option>
+ <option>6</option>
+
+</select>
+<label for="subject">Subject</label>
+<select id="mylist" onchange="myFunction()" class='form-control'>
+{% for u in Questionss %}
+ <option>{{u.subject}}</option>
+{% endfor %} 
+</select>
+<label for="topic">Topic</label>
+<select id="mylistt" onchange="myFunctiont()" class='form-control'>
+{% for u in Questionss %}
+ <option>{{u.topic}}</option>
+{% endfor %} 
+</select>
+<label for="subtopic">Subtopic</label>
+<select id="mylis" onchange="myFunctio()" class='form-control'>
+{% for u in Questionss %}
+ <option>{{u.subtopic}}</option>
+{% endfor %} 
+</select>
+<label for="question">Question</label>
+<select id="myl" onchange="myFunct()" class='form-control'>
+{% for u in Questionss %}
+ <option>{{u.question}}</option>
+{% endfor %} 
+</select>
+</center>
+
+
+<table id="myTable">
+  <tr class="header">
+    <th style="width:2%;">class</th>
+    <th style="width:3%;">subject</th>
+    <th style="width:7%;">topic</th>
+    <th style="width:5%;">subtopic</th>
+    <th style="width:27%;">question</th>
+    <th style="width:5%;">option1</th>
+    <th style="width:5%;">option2</th>
+    <th style="width:5%;">option3</th>
+    <th style="width:5%;">option4</th>
+    <th style="width:5%;">answer</th>
+
+  </tr>
+  {% for i in Questionss %}
+  <tr>
+    <td>{{i.student_class}}</td>
+    <td>{{i.subject}}</td>
+    <td>{{i.topic}}</td>
+    <td>{{i.subtopic}}</td>
+    <td><input type='checkbox' class="chkbx"/ value="{{i.question}}">{{i.question}}</input></td>
+    <td><input type='checkbox' class="chkbx1"/ value="{{i.option1}}">{{i.option1}}</input></td>  
+    <td><input type='checkbox' class="chkbx2"/ value="{{i.option2}}">{{i.option2}}</input></td>  
+    <td><input type='checkbox' class="chkbx3"/ value="{{i.option3}}">{{i.option3}}</input></td>  
+    <td><input type='checkbox' class="chkbx4"/ value="{{i.option4}}">{{i.option4}}</input></td>
+    <td><input type='checkbox' class="chkbx5"/ value="{{i.answer}}">{{i.answer}}</input></td>    
+  </tr>
+  {% endfor %} 
+  
+</table>
+
+<footer>
+		<div class="art">
+		 <div class="content">
+		   <section>
+		   	 <header>Smart Learn</header>
+		   </section>
+		  </div>	  
+		  <div class="notice">
+		      Copyright Protected & copy;
+			  <strong>Smart Learn</strong>
+		  </div>  
+		</div>
+</footer>
+
+</body>
+</html>

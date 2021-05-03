@@ -1,0 +1,1 @@
+web: gunicorn smartl.wsgi --log-file -
