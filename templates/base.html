@@ -262,27 +262,14 @@ footer .notice {
           </div>
           
        {% else %}
-         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav ml-auto">
-           <li class="nav-item active">
-            <a class="nav-link" href="{% url 'studentlogin' %}"><font face = "Comic sans MS" size =" 4"><h5 style="color:#000;">SignIn</h5></font></a>
-           </li>
-           <li class="nav-item active">
-            <a class="nav-link" href="{% url 'studentsignup' %}"><font face = "Comic sans MS" size =" 4"><h5 style="color:#000;">SignUp</h5></font></a>
-           </li>
-           <li class="nav-item">
-            <a class="nav-link" href="{% url 'studentmain'%}"><font face = "Comic sans MS" size =" 4"><h5 style="color:#000;">Quizs</h5></font></a>
-           </li>
-           <li class="nav-item">
-            <a class="nav-link" href=""><font face = "Comic sans MS" size =" 4"><h5 style="color:#000;">Contact</h5></font></a>
-           </li>
-          </ul>
-         </div>    
-
-  {% endif %}  
-  <a href="" class="nav-item nav-link" style="color:#000;"><font face = "Comic sans MS" size =" 4">About</font></a>  
-					
-				</ul>
+     
+        <a href="{% url 'studentlogin' %}" class="nav-item nav-link" style="color:#000;"><font face = "Comic sans MS" size =" 4">SignIn</font></a>   
+        <a href="{% url 'studentsignup' %}" class="nav-item nav-link" style="color:#000;"><font face = "Comic sans MS" size =" 4">SignUp</font></a>       
+        <a href="{% url 'studentmain'%}" class="nav-item nav-link" style="color:#000;"><font face = "Comic sans MS" size =" 4">Quizs</font></a>  
+        <a href="" class="nav-item nav-link" style="color:#000;"><font face = "Comic sans MS" size =" 4">About</font></a>  
+	  {% endif %}  			
+				
+                </ul>
 			</div>
 		</div>
 	</nav>
